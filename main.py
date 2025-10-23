@@ -1,8 +1,8 @@
 """
-Circle Calculator
+Geometry Calculator
 
 This module provides functionality to calculate the circumference and area
-of a circle given its radius.
+of a circle given its radius, and the area of a square given its side length.
 """
 
 import math
@@ -46,16 +46,38 @@ def calculate_area(radius):
     return area
 
 
+def calculate_square_area(side_length):
+    """
+    Calculate the area of a square given its side length.
+    
+    Args:
+        side_length (float): The side length of the square
+        
+    Returns:
+        float: The area of the square
+        
+    Formula:
+        area = side_length²
+    """
+    # Use the formula: area = side_length²
+    area = side_length ** 2
+    return area
+
+
 def main():
     """
-    Main function that demonstrates circle calculations with different radius values.
+    Main function that demonstrates geometry calculations with different values.
     
-    This function calculates and prints both the circumference and area for various
-    circle radii, showing how the calculate_circumference and calculate_area functions
-    work with different inputs.
+    This function calculates and prints the circumference and area for various
+    circles, and the area for various squares, demonstrating how the calculation
+    functions work with different inputs.
     """
-    print("Circle Calculator")
+    print("Geometry Calculator")
     print("=" * 40)
+    print()
+    
+    print("CIRCLE CALCULATIONS:")
+    print("-" * 40)
     print()
     
     # Example 1: Small circle with radius 1
@@ -92,6 +114,31 @@ def main():
     print(f"Radius: {radius4} units")
     print(f"Circumference: {circumference4:.2f} units")
     print(f"Area: {area4:.2f} square units")
+    print()
+    
+    print("SQUARE CALCULATIONS:")
+    print("-" * 40)
+    print()
+    
+    # Example 1: Small square with side length 3
+    side1 = 3
+    square_area1 = calculate_square_area(side1)
+    print(f"Side length: {side1} units")
+    print(f"Area: {square_area1:.2f} square units")
+    print()
+    
+    # Example 2: Medium square with side length 8
+    side2 = 8
+    square_area2 = calculate_square_area(side2)
+    print(f"Side length: {side2} units")
+    print(f"Area: {square_area2:.2f} square units")
+    print()
+    
+    # Example 3: Large square with side length 15
+    side3 = 15
+    square_area3 = calculate_square_area(side3)
+    print(f"Side length: {side3} units")
+    print(f"Area: {square_area3:.2f} square units")
     print()
 
 
