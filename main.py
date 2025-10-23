@@ -1,8 +1,9 @@
 """
-Geometry Calculator
+Geometry Calculator and Utilities
 
 This module provides functionality to calculate the circumference and area
-of a circle given its radius, and the area of a square given its side length.
+of a circle given its radius, the area of a square given its side length,
+and to find the maximum value in a list.
 """
 
 import math
@@ -64,15 +65,37 @@ def calculate_square_area(side_length):
     return area
 
 
+def get_max_value(numbers):
+    """
+    Find the maximum value in a list of numbers.
+    
+    Args:
+        numbers (list): A list of numbers (int or float)
+        
+    Returns:
+        int or float: The maximum value in the list
+        
+    Raises:
+        ValueError: If the list is empty
+    """
+    # Check if the list is empty
+    if not numbers:
+        raise ValueError("Cannot find maximum value of an empty list")
+    
+    # Use Python's built-in max() function to find the maximum value
+    max_value = max(numbers)
+    return max_value
+
+
 def main():
     """
-    Main function that demonstrates geometry calculations with different values.
+    Main function that demonstrates geometry calculations and utility functions.
     
     This function calculates and prints the circumference and area for various
-    circles, and the area for various squares, demonstrating how the calculation
-    functions work with different inputs.
+    circles, the area for various squares, and demonstrates finding maximum values
+    in lists.
     """
-    print("Geometry Calculator")
+    print("Geometry Calculator and Utilities")
     print("=" * 40)
     print()
     
@@ -139,6 +162,31 @@ def main():
     square_area3 = calculate_square_area(side3)
     print(f"Side length: {side3} units")
     print(f"Area: {square_area3:.2f} square units")
+    print()
+    
+    print("LIST MAXIMUM VALUE:")
+    print("-" * 40)
+    print()
+    
+    # Example 1: List of integers
+    list1 = [10, 45, 23, 89, 12, 67]
+    max1 = get_max_value(list1)
+    print(f"List: {list1}")
+    print(f"Maximum value: {max1}")
+    print()
+    
+    # Example 2: List of floats
+    list2 = [3.14, 2.71, 9.81, 1.41, 6.28]
+    max2 = get_max_value(list2)
+    print(f"List: {list2}")
+    print(f"Maximum value: {max2}")
+    print()
+    
+    # Example 3: Mixed positive and negative numbers
+    list3 = [-15, 8, -3, 22, -40, 5]
+    max3 = get_max_value(list3)
+    print(f"List: {list3}")
+    print(f"Maximum value: {max3}")
     print()
 
 
